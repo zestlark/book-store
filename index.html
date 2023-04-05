@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Store</title>
+</head>
+
+<body>
+
+    <div class="nav">
+        <span class="logo">book .</span>
+        <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#store">store</a></li>
+            <li><a href="#contact">contact</a></li>
+            <script>
+                if (localStorage.getItem("auth") !== 'true') {
+                    document.write(`<li class="login-btn"><a href="login.html">login</a></li>`)
+                } else {
+                    document.write(`<li class="login-btn red"><a onclick="logout()">logout</a></li>`)
+                }
+            </script>
+        </ul>
+    </div>
+
+    <div class="container-no-p">
+        <div class="home" id="home">
+            <div class="vintage">
+
+                <div class="hero">
+                    <div class="one">
+                        <h1>Reading is fascinating</h1>
+                        <div class="plate"></div>
+                    </div>
+                    <div class="two"><img src="assets/pexels-artem-malushenko-2224750.jpg" alt=""></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="banner">
+            <div class="one">
+                <img src="assets/cover/teal-and-orange-fantasy-book-cover-design-template-056106feb952bdfb7bfd16b4f9325c11.jpg"
+                    alt="">
+            </div>
+            <p>Welcome to our ebook store! We offer a vast collection of digital books that cover various genres,
+                including fiction, non-fiction, biographies, and self-help books.
+            </p>
+        </div>
+
+        <div class="books" id="store">
+            <p>
+                Featured books
+            <div class="line"></div>
+            </p>
+
+            <div class="search">
+                <input type="text" placeholder="search book" id="searchbar" value="" onkeyup="search()">
+                <img src="https://img.icons8.com/ios/1x/search.png" alt="">
+            </div>
+        </div>
+
+        <div class="box" id="main-box">
+
+        </div>
+
+    </div>
+    <br>
+    <div class="contact" id="contact">
+        <div class="container">
+
+            <br>
+            <br>
+            <p align="center">thankyou for visiting ❤️</p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="view-data" id="view-data">
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

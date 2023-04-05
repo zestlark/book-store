@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login">
+
+    <div class="card">
+        <form action="" id="form">
+            <h1>login</h1>
+            <p>Thank you for choosing our website, and we look forward to serving you</p>
+
+            <br>
+            <label for="username">username</label>
+            <input id="username" required type="text" placeholder="username">
+
+            <br>
+            <label for="">password</label>
+            <input id="password" required type="password" name="" id="" placeholder="password">
+            <button>submit</button>
+        </form>
+        <div class="img">
+            <img src="https://images.unsplash.com/photo-1582721691120-d1db3852893e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGFic3RyYWN0JTIwd2F2ZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60"
+                alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    document.getElementById('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const myusername = "khushi";
+        const mypassword = "root";
+        let username = document.getElementById('username').value.toLowerCase();
+        let password = document.getElementById('password').value.toLowerCase();
+        if (username == myusername && password == mypassword) {
+            localStorage.setItem('auth', 'true')
+            window.location.replace('./')
+        }
+    })
+</script>
