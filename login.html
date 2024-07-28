@@ -10,6 +10,9 @@
 </head>
 
 <body class="login">
+    <div class="nav" id="nav">
+
+    </div>
 
     <div class="card">
         <form action="" id="form">
@@ -34,17 +37,19 @@
 </body>
 
 </html>
-
+<script src="./assets/fetchNav.js"></script>
 <script>
     document.getElementById('form').addEventListener('submit', function (e) {
         e.preventDefault();
-        const myusername = "khushi";
+        const myusername = "root";
         const mypassword = "root";
         let username = document.getElementById('username').value.toLowerCase();
         let password = document.getElementById('password').value.toLowerCase();
         if (username == myusername && password == mypassword) {
             localStorage.setItem('auth', 'true')
-            window.location.replace('./')
+            window.history.back()
         }
     })
+
+    fetchNav('nav')
 </script>

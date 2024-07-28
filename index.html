@@ -11,20 +11,8 @@
 
 <body>
 
-    <div class="nav">
-        <span class="logo">book .</span>
-        <ul>
-            <li><a href="#home">home</a></li>
-            <li><a href="#store">store</a></li>
-            <li><a href="#contact">contact</a></li>
-            <script>
-                if (localStorage.getItem("auth") !== 'true') {
-                    document.write(`<li class="login-btn"><a href="login.html">login</a></li>`)
-                } else {
-                    document.write(`<li class="login-btn red"><a onclick="logout()">logout</a></li>`)
-                }
-            </script>
-        </ul>
+    <div class="nav" id="nav">
+        
     </div>
 
     <div class="container-no-p">
@@ -83,11 +71,18 @@
             <br>
         </div>
     </div>
-
-    <div class="view-data" id="view-data">
-
-    </div>
 </body>
 <script src="script.js"></script>
+<script src="./assets/fetchNav.js"></script>
+<script src="./assets/fetchBooks.js"></script>
+<script>
+    fetchNav('nav');
 
+    async function getbooksInHtml(){
+        const books = await fetchBooks();
+        loopBook(books,'main-box')
+    }
+
+    getbooksInHtml()
+</script>
 </html>

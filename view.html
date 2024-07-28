@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Book Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nav" id="nav">
+
+    </div>
+
+    <div class="view-data" id="view-data">
+        <div class="card">
+            <div class="one">
+                <div class="box">
+                    <div>
+                        <img id="poster-element" alt="">
+                        <div><small><i id="author-element"></i></small></div>
+                    </div>
+
+                    <div>
+                        <h1 id="title-element"></h1>
+                        <div class="two">
+                            <span id="type-element"></span>
+                        </div>
+
+                        <div class="two">
+                            <span id="summary-element"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pdf-viewer"></div>
+            <div id="buttons-element"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="script.js"></script>
+<script src="./assets/fetchNav.js"></script>
+<script src="./assets/fetchBooks.js"></script>
+<script src="./assets/showBookById.js"></script>
+<script src="./assets/fetchPdf.js"></script>
+<script>
+    fetchNav('nav')
+
+    async function showbookbyidcall() {
+        const id = new URLSearchParams(window.location.search).get('bookid');
+        const books = await fetchBooks()
+        const selectedbook = await showBookById(books, id)
+        console.log(selectedbook.url);
+        fetchPdf(selectedbook.url, 'pdf-viewer')
+    }
+
+    showbookbyidcall()
+</script>

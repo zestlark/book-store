@@ -311,78 +311,54 @@ a {
 
 /*  */
 
-.view-data {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(6px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}
-
-.view-data .card {
-    width: 300px;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    max-height: 700px;
-    border: 1px solid rgba(128, 128, 128, 0.199);
-}
 
 .view-data .card .one {
-    width: 100%;
     background: linear-gradient(317.37deg, #647FB3 8.1%, var(--color) 95.71%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 30px 0;
+    display: flex;
     flex-direction: column;
-    gap: 15px;
-    color: #123456;
-    margin-bottom: 25px;
-}
-
-.view-data .card .one img {
-    width: 130px;
-}
-
-.view-data .card .one .title {
-    background: black;
-    padding: 8px 10px;
-    width: 80%;
-    margin: 0 10%;
-    border-radius: 15px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.685);
-    font-weight: lighter;
-    font-size: 14px;
-    margin-bottom: -45px;
-}
-
-.view-data .card .one small {
     color: white;
 }
 
-.view-data .card .two {
-    font-size: 14px;
-    margin: 10px;
-    font-weight: 100;
-    color: grey;
-    display: -webkit-box;
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-top: 0;
+.view-data .card .one .box {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* background: red;  */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: start;
+    max-width: 1000px;
+    margin-bottom: 30px;
+    padding: 10px;
 }
 
-.view-data .card .two span {
-    color: var(--color);
-    font-size: 15px;
+.view-data .card .one .box>div .two {
+    margin-top: 15px;
 }
+
+.view-data .card .one .box h1 {
+    max-width: 400px;
+
+}
+
+.view-data .card .one .box #type-element {
+    background: rgb(0, 120, 24);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+}
+
+.view-data .card .one .box #summary-element {
+    opacity: 0.8;
+    max-width: 400px;
+    display: block;
+}
+
+.view-data .card .one img {
+    width: 150px;
+}
+
 
 .view-data .card .read {
     margin: 10px;
@@ -396,33 +372,36 @@ a {
     text-transform: capitalize;
     text-align: center;
     cursor: pointer;
+    max-width: 300px;
+    margin: 50px auto;
 }
 
-.view-data .card .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    background: rgba(255, 255, 255, 0.441);
-    width: 30px;
-    display: grid;
-    place-items: center;
-    height: 30px;
-    border-radius: 50%;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-/* login page */
-
-.login {
-    background: linear-gradient(317.37deg, var(--color) 8.1%, #647FB3 95.71%);
-}
-
-.login {
+.view-data #pdf-viewer {
+    background: red;
+    max-width: 500px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.view-data #pdf-viewer canvas {
+    width: 100%;
+}
+
+/* login page */
+/* 
+    .login {
+        background: linear-gradient(317.37deg, var(--color) 8.1%, #647FB3 95.71%);
+    } */
+
+.login {
+    /* display: flex;
+    width: 100%;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; */
     min-height: 100vh;
 }
 
@@ -437,6 +416,8 @@ a {
     color: var(--color);
     margin: 20px;
     gap: 20px;
+    margin: 0 auto;
+    margin-top: 100px;
 }
 
 .login .card form {
@@ -517,6 +498,10 @@ a {
 
     .banner {
         padding: 10px 0;
+    }
+
+    .view-data .card .one .box {
+        flex-direction: column;
     }
 
     .login .card {
